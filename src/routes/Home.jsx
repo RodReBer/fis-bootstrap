@@ -367,8 +367,8 @@ const Home = () => {
                     </div>
                     <div className='pt-16'>
                         <Container>
-                            <div className="flex gap-2 items-center content-center">
-                                <table class="table overflow-scroll">
+                            <div className="flex gap-2 items-center content-center overflow-scroll">
+                                <table class="table ">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
