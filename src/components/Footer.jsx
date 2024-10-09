@@ -5,7 +5,6 @@ const navigation = {
         { name: 'Iconos', href: 'https://icons.getbootstrap.com' },
         { name: 'Temas', href: 'https://themes.getbootstrap.com' },
         { name: 'Blog', href: 'https://blog.getbootstrap.com' },
-        { name: 'Partners', href: '#' },
     ],
     social: [
 
@@ -58,7 +57,7 @@ const Footer = () => {
                     ))}
                 </div>
                 <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-                    &copy; 2020 Your Company, Inc. All rights reserved.
+                    &copy; 2024 Fundametos de Ingenieria de Software, Rodrigo Rey & Rom&aacute;n Ferrero.
                 </p>
             </div>
         </footer>
