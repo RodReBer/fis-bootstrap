@@ -308,7 +308,7 @@ const Home = () => {
                     </div>
                     <div className='pt-16'>
                         <Container>
-                            <div className="flex gap-2 items-center content-center">
+                            <div className="flex gap-2 items-center content-center overflow-scroll">
                                 <button type="button" class="btn btn-primary">Primary</button>
                                 <button type="button" class="btn btn-secondary">Secondary</button>
                                 <button type="button" class="btn btn-success">Success</button>
@@ -368,7 +368,7 @@ const Home = () => {
                     <div className='pt-16'>
                         <Container>
                             <div className="flex gap-2 items-center content-center">
-                                <table class="table">
+                                <table class="table overflow-scroll">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
