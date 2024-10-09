@@ -119,8 +119,8 @@ const Home = () => {
                     <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-40 lg:flex lg:px-8 lg:pt-40">
                         <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
                             <img
-                                alt="Your Company"
-                                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+                                alt="Bootstrap logo"
+                                src="/image.webp"
                                 className="h-11"
                             />
                             <div className="mt-24 sm:mt-32 lg:mt-16">
