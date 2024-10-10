@@ -755,7 +755,7 @@ const Home = () => {
                     </div>
                     <div className='pt-16'>
                         <Container>
-                            <div>
+                            <div className='flex items-center '>
                                 <div class="spinner-border text-primary ml-2 " role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
