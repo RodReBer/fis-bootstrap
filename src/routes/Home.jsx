@@ -815,7 +815,7 @@ const Home = () => {
                             <div id="carouselExample" class="carousel slide">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src={images.ort} class="d-block mx-auto h-96 " alt="imagen-1" />
+                                        <img src={images.ort} class="d-block mx-auto h-64 md:h-96  " alt="imagen-1" />
                                     </div>
                                     <div class="carousel-item">
                                         <img src={images.ing} class="d-block mx-auto max-h-96" alt="imagen-2" />
