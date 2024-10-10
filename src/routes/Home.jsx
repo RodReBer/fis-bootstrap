@@ -13,13 +13,10 @@ import Footer from '../components/Footer'
 import Container from '../components/Container'
 import images from '../assets/index.js';
 
-
 import React, { useEffect } from 'react';
 
 import 'prismjs/themes/prism.css';
 import Prism from 'prismjs';
-
-
 
 const primaryFeatures = [
     {
@@ -554,6 +551,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
                 {/* Ejemplo de tablas */}
                 <div className="mt-32 sm:mt-56">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -673,6 +671,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
                 {/* Ejemplo de acordion */}
                 <div className="mt-32 sm:mt-56">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -740,6 +739,7 @@ const Home = () => {
 
                     </div>
                 </div>
+
                 {/* Ejemplo de spinners */}
                 <div className="mt-32 sm:mt-56">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -756,32 +756,32 @@ const Home = () => {
                     <div className='pt-16'>
                         <Container>
                             <div className='flex items-center '>
-                                <div class="spinner-border text-primary ml-2 " role="status">
+                                <div class="spinner-border text-primary " role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-grow text-secondary ml-2" role="status">
+                                <div class="spinner-grow text-secondary" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <button class="btn btn-primary ml-2" type="button" disabled>
+                                <button class="btn btn-primary" type="button" disabled>
                                     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
                                     <span role="status">Loading...</span>
                                 </button>
-                                <div class="spinner-border text-success ml-2" role="status">
+                                <div class="spinner-border text-success" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-grow text-danger ml-2" role="status">
+                                <div class="spinner-grow text-danger" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-border text-warning ml-2" role="status">
+                                <div class="spinner-border text-warning" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-border text-info ml-2" role="status">
+                                <div class="spinner-border text-info" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-border text-light ml-2" role="status">
+                                <div class="spinner-border text-light" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-border text-dark ml-2" role="status">
+                                <div class="spinner-border text-dark" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
                             </div>
@@ -847,8 +847,6 @@ const Home = () => {
                         </pre>
                     </div>
                 </div>
-
-
             </main>
 
             {/* Footer */}
