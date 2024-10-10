@@ -1,80 +1,296 @@
 import {
-    ArrowPathIcon,
     ChevronRightIcon,
-    CloudArrowUpIcon,
     Cog6ToothIcon,
-    FingerPrintIcon,
-    LockClosedIcon,
-    ServerIcon,
 } from '@heroicons/react/20/solid'
-import { BoltIcon, CalendarDaysIcon, UsersIcon } from '@heroicons/react/24/outline'
+import { FaTabletAlt } from "react-icons/fa";
+import { BsGrid1X2Fill } from "react-icons/bs";
+import { PiPackageLight } from "react-icons/pi";
+import { IoMdDocument } from "react-icons/io";
+import { TfiWorld } from "react-icons/tfi";
+import { SiStyledcomponents } from "react-icons/si";
+import { MdContactSupport } from "react-icons/md";
 import Footer from '../components/Footer'
 import Container from '../components/Container'
+import bootstrap from '../assets/bootstrap.png'
+import img2 from '../assets/img2.webp'
+import ort from '../assets/ort.jpg'
+import sociales from '../assets/sociales.jpg'
+import ing from '../assets/ing.jpg'
+
+import React, { useEffect } from 'react';
+
+import 'prismjs/themes/prism.css';
+import Prism from 'prismjs';
+
+
 
 const primaryFeatures = [
     {
-        name: 'Server monitoring',
-        description:
-            'Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.',
-        href: '#',
-        icon: BoltIcon,
+        name: 'Incluir a través de CDN',
+        description: (
+            <>
+                Cuando solo necesite incluir CSS o JS compilado de Bootstrap, puede usar
+                <a className='font-semibold leading-6 text-indigo-400' href="https://www.jsdelivr.com/" target="_blank" rel="noopener noreferrer"> jsDelivr</a>.
+                Véalo en acción con nuestro sencillo
+                <a className='font-semibold leading-6 text-indigo-400' href="https://getbootstrap.com/docs/5.3/getting-started/introduction/#quick-start" target="_blank" rel="noopener noreferrer"> inicio rápido</a>, o
+                <a className='font-semibold leading-6 text-indigo-400' href="https://getbootstrap.com/docs/5.3/examples/" target="_blank" rel="noopener noreferrer"> explore los ejemplos</a>
+                para poner en marcha su próximo proyecto. También puede optar por incluir a
+                Popper y nuestro JS
+                <a className='font-semibold leading-6 text-indigo-400' href="https://getbootstrap.com/docs/5.3/getting-started/introduction/#separate" target="_blank" rel="noopener noreferrer"> por separado.</a>
+            </>
+        ),
+        icon: TfiWorld,
     },
     {
-        name: 'Collaborate',
-        description:
-            'Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.',
-        href: '#',
-        icon: UsersIcon,
+        name: 'Instalar a través del administrador de paquetes',
+        description: (
+            <>
+                Instale los archivos fuente de Sass y JavaScript de Bootstrap a través de npm, RubyGems, Composer o Meteor. Las instalaciones administradas por paquetes no incluyen documentación ni nuestros scripts de compilación completos. También puede
+                <a className='font-semibold leading-6 text-indigo-400' href="https://github.com/twbs/examples/" target="_blank" rel="noopener noreferrer"> usar cualquier demostración de nuestro repositorio de ejemplos</a> para iniciar rápidamente los proyectos de Bootstrap.
+            </>
+        ),
+        icon: PiPackageLight,  // Solo referencia al componente
     },
-    {
-        name: 'Task scheduling',
-        description:
-            'Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.',
-        href: '#',
-        icon: CalendarDaysIcon,
-    },
-]
+];
+
 const secondaryFeatures = [
     {
-        name: 'Push to deploy.',
-        description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-        icon: CloudArrowUpIcon,
+        name: 'Responsividad',
+        description: 'Mobile-first: Bootstrap utiliza un enfoque "mobile-first", es decir, los estilos por defecto están diseñados para móviles y luego se ajustan para pantallas más grandes.',
+        icon: FaTabletAlt,
     },
     {
-        name: 'SSL certificates.',
-        description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-        icon: LockClosedIcon,
+        name: 'Componentes predefinidos',
+        description: 'Bootstrap incluye varios componentes predefinidos, como botones, formularios, alertas, etc.',
+        icon: SiStyledcomponents,
     },
     {
-        name: 'Simple queues.',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
-        icon: ArrowPathIcon,
+        name: 'Sistema de Grid',
+        description: ' Bootstrap incluye un sistema de grid basado en flexbox que permite crear diseños complejos y flexibles con facilidad.',
+        icon: BsGrid1X2Fill,
     },
+
     {
-        name: 'Advanced security.',
-        description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-        icon: FingerPrintIcon,
-    },
-    {
-        name: 'Powerful API.',
-        description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+        name: 'Personalización',
+        description: 'Bootstrap es altamente personalizable y permite anular fácilmente los estilos predeterminados.',
         icon: Cog6ToothIcon,
     },
     {
-        name: 'Database backups.',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
-        icon: ServerIcon,
+        name: 'Documentación',
+        description: ' Bootstrap tiene una documentación completa y detallada que explica cómo usar cada uno de sus componentes y estilos.',
+        icon: IoMdDocument,
+    },
+    {
+        name: 'Soporte',
+        description: ' Bootstrap tiene una gran comunidad de desarrolladores que pueden ayudarte con cualquier problema o pregunta que puedas tener.',
+        icon: MdContactSupport,
     },
 ]
-const stats = [
-    { id: 1, name: 'Developers on the platform', value: '8,000+' },
-    { id: 2, name: 'Daily requests', value: '900m+' },
-    { id: 3, name: 'Uptime guarantee', value: '99.9%' },
-    { id: 4, name: 'Projects deployed', value: '12m' },
-]
 
+const item = {
+    icon: (props) => (
+        <svg fill="#ffff" width="40px" height="40px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <title>kahoot</title>
+            <path d="M24.75 26.274l-1.239 2.918 2.652 1.829 2.613-1.546-1.11-3.199zM1.851 3.919v23.879l5.050 0.175-0.044-8.36 3.113-3.004 3.287 11.363h4.462l-4.114-14.823 6.204-6.814-4.376-1.676-8.534 8.141v-10.165zM26.71 24.599l3.438-21.92-8.924-1.698z"></path>
+        </svg>
+    ),
+};
 
 const Home = () => {
+
+    const codeCarousel = `
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+        `;
+    const codeSpinners = `
+    <--! Primary -->
+    <div class="spinner-border text-primary " role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <--! Secondary -->
+    <div class="spinner-grow text-secondary" role="status">
+    <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <--! Boton Cargando -->
+    <button class="btn btn-primary" type="button" disabled>
+    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+    <span role="status">Loading...</span>
+    </button>
+
+    <--! Succsess -->
+    <div class="spinner-border text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <--! Danger -->
+    <div class="spinner-grow text-danger" role="status">
+    <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <--! Warning -->
+    <div class="spinner-border text-warning" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <--! Info -->
+    <div class="spinner-border text-info" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <--! Light -->
+    <div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <--! Dark -->
+    <div class="spinner-border text-dark" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+                            `;
+    const codeAcordion = `
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Accordion Item #1
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    Accordion Item #2
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Accordion Item #3
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+    const codeTables = `
+    <div className="flex gap-2 items-center content-center overflow-scroll">
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Dominio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Rodrigo</td>
+                    <td>Rey</td>
+                    <td>@rre</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Roman</td>
+                    <td>Ferrero</td>
+                    <td>@rfe</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">selecciono</td>
+                    <td>@la_columna_que_quiero</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+                           `;
+    const codeGetStarted = `
+        <!doctype html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <--! IMPORTANTISIMO -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Bootstrap demo</title>
+            <--! Bootstrap CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        </head>
+        <body>
+            <h1>Hello, world!</h1>
+            <--! Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        </body>
+        </html>
+`;
+    const codeNpm = `
+    npm install bootstrap@5.3.3
+    o
+    gem install bootstrap -v 5.3.3
+    `;
+    const codeTipografia = `
+    <h1><span className='text-indigo-400 font-bold'>h1.</span> Bootstrap heading <small>Secondary Text</small></h1>
+    <h2><span className='text-indigo-400 font-bold'>h2.</span>  Bootstrap heading <small>Secondary Text</small></h2>
+    <h3><span className='text-indigo-400 font-bold'>h3.</span>  Bootstrap heading <small>Secondary Text</small></h3>
+    <h4><span className='text-indigo-400 font-bold'>h4.</span>  Bootstrap heading <small>Secondary Text</small></h4>
+    <h5><span className='text-indigo-400 font-bold'>h5.</span>  Bootstrap heading <small>Secondary Text</small></h5>
+    <h6><span className='text-indigo-400 font-bold'>h6.</span>  Bootstrap heading <small>Secondary Text</small></h6>
+    `;
+    const codeButtons = `
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+
+    <button type="button" class="btn btn-link">Link</button>
+    `;
+    useEffect(() => {
+        const codeElements = document.querySelectorAll('.highlightedCode');
+        codeElements.forEach((codeElement) => {
+            Prism.highlightElement(codeElement);
+        });
+    }, []);
+
     return (
         <div className="bg-gray-800">
             <main>
@@ -138,31 +354,37 @@ const Home = () => {
                                 Bootstrap
                             </h1>
                             <p className="mt-6 text-lg leading-8 text-gray-300">
+                                <hr />
+
                                 Bootstrap es un <span className='text-white font-bold'>framework</span> front-end gratuito para un desarrollo web más rápido y sencillo
                                 <br />
                                 Fue desarrollado por <span className='text-white font-bold'>Mark Otto y Jacob</span> Thornton en Twitter y lanzado como producto de código abierto en agosto de 2011 en GitHub.
                                 <br />
                                 En junio de 2014, Bootstrap fue el proyecto <span className='text-white font-bold'>n&uacute;mero uno</span> en GitHub
 
+                                <hr />
+
 
                             </p>
+
                             <div className="mt-10 flex items-center gap-x-6">
+
                                 <a
-                                    href="#"
-                                    className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                                    href="https://kahoot.it/?deviceId=yTcpbj6yupig2yijoSO7Qd&sessionId=1728527769463"
+                                    className="rounded-md bg-indigo-500 px-5 py-4 text-xl font-bold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 flex gap-2 items-center"
                                 >
-                                    Get started
+                                    Kahooooooot
+                                    <item.icon aria-hidden="true" className="h-6 w-6" />
+
                                 </a>
-                                <a href="#" className="text-sm font-semibold leading-6 text-white">
-                                    Live demo <span aria-hidden="true">→</span>
-                                </a>
+
                             </div>
                         </div>
                         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
                             <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
                                 <img
                                     alt="App screenshot"
-                                    src="https://tailwindui.com/plus/img/component-images/dark-project-app-screenshot.png"
+                                    src={bootstrap}
                                     width={2432}
                                     height={1442}
                                     className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
@@ -172,64 +394,20 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* Logo cloud */}
-                <div className="mx-auto mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
-                    <h2 className="text-center text-lg font-semibold leading-8 text-white">
-                        The world’s most innovative companies use our app
-                    </h2>
-                    <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-                        <img
-                            alt="Transistor"
-                            src="https://tailwindui.com/plus/img/logos/158x48/transistor-logo-white.svg"
-                            width={158}
-                            height={48}
-                            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                        />
-                        <img
-                            alt="Reform"
-                            src="https://tailwindui.com/plus/img/logos/158x48/reform-logo-white.svg"
-                            width={158}
-                            height={48}
-                            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                        />
-                        <img
-                            alt="Tuple"
-                            src="https://tailwindui.com/plus/img/logos/158x48/tuple-logo-white.svg"
-                            width={158}
-                            height={48}
-                            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                        />
-                        <img
-                            alt="SavvyCal"
-                            src="https://tailwindui.com/plus/img/logos/158x48/savvycal-logo-white.svg"
-                            width={158}
-                            height={48}
-                            className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-                        />
-                        <img
-                            alt="Statamic"
-                            src="https://tailwindui.com/plus/img/logos/158x48/statamic-logo-white.svg"
-                            width={158}
-                            height={48}
-                            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-                        />
-                    </div>
-                </div>
-
                 {/* Feature section */}
                 <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
                     <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="text-base font-semibold leading-7 text-indigo-400">Deploy faster</h2>
+                        <h2 className="text-base font-semibold leading-7 text-indigo-400">PRACTICO</h2>
                         <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                            Everything you need to deploy your app
+                            Empieza como quieras
                         </p>
                         <p className="mt-6 text-lg leading-8 text-gray-300">
-                            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-                            accusamus quisquam.
+                            Salta directamente a la construcción con Bootstrap: usa la CDN, instálala a través del administrador de paquetes o descarga el código fuente.
                         </p>
+                        <a href="https://getbootstrap.com/docs/5.3/getting-started/download/" target="_blank" rel="noopener noreferrer" className='text-xl font-semibold leading-6 text-indigo-400 underline'>Leer los documentos de instalaci&oacute;n<span aria-hidden="true">→</span></a>
                     </div>
                     <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-                        <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                        <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
                             {primaryFeatures.map((feature) => (
                                 <div key={feature.name} className="flex flex-col">
                                     <dt className="text-base font-semibold leading-7 text-white">
@@ -240,15 +418,26 @@ const Home = () => {
                                     </dt>
                                     <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-300">
                                         <p className="flex-auto">{feature.description}</p>
-                                        <p className="mt-6">
-                                            <a href={feature.href} className="text-sm font-semibold leading-6 text-indigo-400">
-                                                Learn more <span aria-hidden="true">→</span>
-                                            </a>
-                                        </p>
                                     </dd>
                                 </div>
                             ))}
                         </dl>
+                    </div>
+                    <div className='pt-10'>
+                        {/* Div donde se mostrará el código resaltado */}
+                        <pre>
+                            <code className="language-html highlightedCode">
+                                {codeGetStarted}
+                            </code>
+                        </pre>
+                    </div>
+                    <div className='pt-10'>
+                        {/* Div donde se mostrará el código resaltado */}
+                        <pre>
+                            <code className="language-html highlightedCode">
+                                {codeNpm}
+                            </code>
+                        </pre>
                     </div>
                 </div>
 
@@ -256,11 +445,11 @@ const Home = () => {
                 <div className="mt-32 sm:mt-56">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="mx-auto max-w-2xl sm:text-center">
-                            <h2 className="text-base font-semibold leading-7 text-indigo-400">Everything you need</h2>
-                            <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">No server? No problem.</p>
+                            <h2 className="text-base font-semibold leading-7 text-indigo-400">Caracter&iacute;sticas</h2>
+                            <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Principales</p>
                             <p className="mt-6 text-lg leading-8 text-gray-300">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                                iste dolor cupiditate blanditiis.
+                                Bootstrap es un framework front-end que facilita el desarrollo web con componentes listos para usar como botones, formularios y más.
+
                             </p>
                         </div>
                     </div>
@@ -268,7 +457,7 @@ const Home = () => {
                         <div className="mx-auto max-w-7xl px-6 lg:px-8">
                             <img
                                 alt="App screenshot"
-                                src="https://tailwindui.com/plus/img/component-images/dark-project-app-screenshot.png"
+                                src={img2}
                                 width={2432}
                                 height={1442}
                                 className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
@@ -284,7 +473,7 @@ const Home = () => {
                                 <div key={feature.name} className="relative pl-9">
                                     <dt className="inline font-semibold text-white">
                                         <feature.icon aria-hidden="true" className="absolute left-1 top-1 h-5 w-5 text-indigo-500" />
-                                        {feature.name}
+                                        {feature.name}:
                                     </dt>{' '}
                                     <dd className="inline">{feature.description}</dd>
                                 </div>
@@ -293,7 +482,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* Example section */}
+                {/* Botones section */}
                 <div className="mt-32 sm:mt-56">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -322,6 +511,14 @@ const Home = () => {
 
                             </div>
                         </Container>
+                        <div className='pt-10'>
+                            {/* Div donde se mostrará el código resaltado */}
+                            <pre>
+                                <code className="language-html highlightedCode">
+                                    {codeButtons}
+                                </code>
+                            </pre>
+                        </div>
                     </div>
                 </div>
 
@@ -350,6 +547,14 @@ const Home = () => {
 
                             </div>
                         </Container>
+                        <div className='pt-10'>
+                            {/* Div donde se mostrará el código resaltado */}
+                            <pre>
+                                <code className="language-html highlightedCode">
+                                    {codeTipografia}
+                                </code>
+                            </pre>
+                        </div>
                     </div>
                 </div>
                 {/* Ejemplo de tablas */}
@@ -460,8 +665,15 @@ const Home = () => {
                                     </tr>
                                 </tbody>
                             </table>
-
                         </Container>
+                        <div className='pt-10'>
+                            {/* Div donde se mostrará el código resaltado */}
+                            <pre>
+                                <code className="language-html highlightedCode">
+                                    {codeTables}
+                                </code>
+                            </pre>
+                        </div>
                     </div>
                 </div>
                 {/* Ejemplo de acordion */}
@@ -519,6 +731,15 @@ const Home = () => {
                             </div>
                         </Container>
 
+                        <div>
+                            {/* Div donde se mostrará el código resaltado */}
+                            <pre>
+                                <code className="language-html highlightedCode">
+                                    {codeAcordion}
+                                </code>
+                            </pre>
+                        </div>
+
 
                     </div>
                 </div>
@@ -541,13 +762,17 @@ const Home = () => {
                                 <div class="spinner-border text-primary " role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-border text-secondary" role="status">
+                                <div class="spinner-grow text-secondary" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
+                                <button class="btn btn-primary" type="button" disabled>
+                                    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                                    <span role="status">Loading...</span>
+                                </button>
                                 <div class="spinner-border text-success" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-border text-danger" role="status">
+                                <div class="spinner-grow text-danger" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
                                 <div class="spinner-border text-warning" role="status">
@@ -565,7 +790,16 @@ const Home = () => {
                             </div>
                         </Container>
                     </div>
+                    <div className='pt-10'>
+                        {/* Div donde se mostrará el código resaltado */}
+                        <pre>
+                            <code className="language-html highlightedCode">
+                                {codeSpinners}
+                            </code>
+                        </pre>
+                    </div>
                 </div>
+
                 {/* Ejemplo de carousel */}
                 <div className="mt-32 sm:mt-56">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -584,15 +818,17 @@ const Home = () => {
                             <div id="carouselExample" class="carousel slide">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="..." class="d-block w-full h-64" alt="imagen-1"/>
+                                        <img src={ort} class="d-block mx-auto h-96 " alt="imagen-1" />
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="..." class="d-block w-full h-64" alt="imagen-2"/>
+                                        <img src={ing} class="d-block mx-auto max-h-96" alt="imagen-2" />
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="..." class="d-block w-full h-64" alt="imagen-3"/>
+                                        <img src={sociales} class="d-block mx-auto max-h-96" alt="imagen-3" />
                                     </div>
                                 </div>
+
+
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
@@ -604,7 +840,18 @@ const Home = () => {
                             </div>
                         </Container>
                     </div>
+
+                    <div className='pt-10 z-10'>
+                        {/* Div donde se mostrará el código resaltado */}
+                        <pre>
+                            <code className="language-html highlightedCode">
+                                {codeCarousel}
+                            </code>
+                        </pre>
+                    </div>
                 </div>
+
+
             </main>
 
             {/* Footer */}
