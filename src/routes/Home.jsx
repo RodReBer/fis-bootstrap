@@ -11,7 +11,7 @@ import { SiStyledcomponents } from "react-icons/si";
 import { MdContactSupport } from "react-icons/md";
 import Footer from '../components/Footer'
 import Container from '../components/Container'
-import {bootstrap, img2, ing, ort, sociales} from '../assets'
+import { bootstrap, img2, ing, ort, sociales } from '../assets/index.js'
 
 import React, { useEffect } from 'react';
 

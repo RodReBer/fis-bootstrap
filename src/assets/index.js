@@ -1,8 +1,8 @@
-import bootstrap from './bootstrap.png';
-import img2 from './img2.webp';
-import ing from './ing.jpg';
-import ort from './ort.jpg';
-import sociales from './sociales.jpg';
+import bootstrap from '../assets/bootstrap.png';
+import img2 from '../assets/img2.webp';
+import ing from '../assets/ing.jpg';
+import ort from '../assets/ort.jpg';
+import sociales from '../assets/sociales.jpg';
 
 export default {
     bootstrap
