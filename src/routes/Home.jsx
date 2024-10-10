@@ -494,7 +494,7 @@ const Home = () => {
                     </div>
                     <div className='pt-16'>
                         <Container>
-                            <div className="flex gap-2 items-center content-center overflow-scroll">
+                            <div className="flex gap-2 items-center content-center  flex-wrap">
                                 <button type="button" class="btn btn-primary">Primary</button>
                                 <button type="button" class="btn btn-secondary">Secondary</button>
                                 <button type="button" class="btn btn-success">Success</button>
@@ -755,33 +755,33 @@ const Home = () => {
                     </div>
                     <div className='pt-16'>
                         <Container>
-                            <div className='flex gap-3'>
-                                <div class="spinner-border text-primary " role="status">
+                            <div>
+                                <div class="spinner-border text-primary ml-2 " role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-grow text-secondary" role="status">
+                                <div class="spinner-grow text-secondary ml-2" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <button class="btn btn-primary" type="button" disabled>
+                                <button class="btn btn-primary ml-2" type="button" disabled>
                                     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
                                     <span role="status">Loading...</span>
                                 </button>
-                                <div class="spinner-border text-success" role="status">
+                                <div class="spinner-border text-success ml-2" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-grow text-danger" role="status">
+                                <div class="spinner-grow text-danger ml-2" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-border text-warning" role="status">
+                                <div class="spinner-border text-warning ml-2" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-border text-info" role="status">
+                                <div class="spinner-border text-info ml-2" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-border text-light" role="status">
+                                <div class="spinner-border text-light ml-2" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="spinner-border text-dark" role="status">
+                                <div class="spinner-border text-dark ml-2" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
                             </div>
