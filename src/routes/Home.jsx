@@ -11,7 +11,8 @@ import { SiStyledcomponents } from "react-icons/si";
 import { MdContactSupport } from "react-icons/md";
 import Footer from '../components/Footer'
 import Container from '../components/Container'
-import { bootstrap, img2, ing, ort, sociales } from '../assets/index.js'
+import images from '../assets/index.js'; 
+
 
 import React, { useEffect } from 'react';
 
@@ -380,7 +381,7 @@ const Home = () => {
                             <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
                                 <img
                                     alt="App screenshot"
-                                    src={bootstrap}
+                                    src={images.bootstrap}
                                     width={2432}
                                     height={1442}
                                     className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
@@ -453,7 +454,7 @@ const Home = () => {
                         <div className="mx-auto max-w-7xl px-6 lg:px-8">
                             <img
                                 alt="App screenshot"
-                                src={img2}
+                                src={images.img2}
                                 width={2432}
                                 height={1442}
                                 className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
@@ -814,13 +815,13 @@ const Home = () => {
                             <div id="carouselExample" class="carousel slide">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src={ort} class="d-block mx-auto h-96 " alt="imagen-1" />
+                                        <img src={images.ort} class="d-block mx-auto h-96 " alt="imagen-1" />
                                     </div>
                                     <div class="carousel-item">
-                                        <img src={ing} class="d-block mx-auto max-h-96" alt="imagen-2" />
+                                        <img src={images.ing} class="d-block mx-auto max-h-96" alt="imagen-2" />
                                     </div>
                                     <div class="carousel-item">
-                                        <img src={sociales} class="d-block mx-auto max-h-96" alt="imagen-3" />
+                                        <img src={images.sociales} class="d-block mx-auto max-h-96" alt="imagen-3" />
                                     </div>
                                 </div>
 
